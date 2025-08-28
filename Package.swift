@@ -185,9 +185,6 @@ let package = Package(
           package: "DataCompression",
           condition: .when(platforms: [.macOS, .iOS, .watchOS, .tvOS, .visionOS])
         ),
-        .product(name: "NIO", package: "swift-nio"),
-        .product(name: "NIOHTTP1", package: "swift-nio"),
-        .product(name: "NIOTestUtils", package: "swift-nio"),
       ],
       path: "Tests/ExportersTests/OpenTelemetryProtocol"
     ),
@@ -331,8 +328,6 @@ extension Package {
           name: "URLSessionInstrumentationTests",
           dependencies: [
             "URLSessionInstrumentation",
-            .product(name: "NIO", package: "swift-nio"),
-            .product(name: "NIOHTTP1", package: "swift-nio"),
           ],
           path: "Tests/InstrumentationTests/URLSessionTests"
         ),
