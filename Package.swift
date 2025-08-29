@@ -62,6 +62,11 @@ let package = Package(
       dependencies: ["OpenTelemetryApi", "OpenTelemetrySdk"]
     ),
     .target(
+      name: "SharedTestUtils",
+      dependencies: [],
+      path: "Tests/Shared/TestUtils"
+    ),
+    .target(
       name: "OTelSwiftLog",
       dependencies: [
         "OpenTelemetryApi",
@@ -180,6 +185,7 @@ let package = Package(
       dependencies: [
         "OpenTelemetryProtocolExporterGrpc",
         "OpenTelemetryProtocolExporterHttp",
+        "SharedTestUtils",
         .product(
           name: "DataCompression",
           package: "DataCompression",
@@ -328,6 +334,7 @@ extension Package {
           name: "URLSessionInstrumentationTests",
           dependencies: [
             "URLSessionInstrumentation",
+            "SharedTestUtils",
           ],
           path: "Tests/InstrumentationTests/URLSessionTests"
         ),
